@@ -1,0 +1,120 @@
+
+/* LOGIN FORM */
+
+body.login {
+    background: #f8f8f8;
+    height: 385px;
+    background-image: url('bg1.jpg');
+    background-repeat: no-repeat;
+    overflow: hidden;
+    background-size: cover;
+    color: black;
+}
+
+.login #header {
+    height: 80px;
+    padding: 15px 16px;
+    justify-content: center;
+    background-color: rgba(228, 220, 220, 0.897);
+    box-shadow: 0 0 17px #333;
+    color: black;
+}
+
+
+
+.login #header h1 {
+    /*font-size: 18px; */
+    color: black;
+    font-size: 36px;
+    margin-bottom: 80px;
+    font-family: sans-serif;
+    padding-top: 55px;
+}
+
+.login #header h1 a {
+    color: rgb(0, 0, 0);
+    
+}
+
+.login #content {
+    padding: 10px 20px 0;
+}
+
+.login #container {
+    
+    overflow: hidden;
+    width: 30em;
+    min-width: 300px;
+    margin: 100px auto;
+    border-radius: 25px;
+    background-color: rgba(228, 220, 220, 0.897);
+    box-shadow: 0 0 17px #333;
+}
+
+.login #content-main {
+    width: 100%;
+    
+}
+
+.login .form-row {
+    padding: px 0;
+    float: left;
+    width: 100%;
+    border-bottom: none;
+}
+.login .form-row input:hover{
+    box-shadow: 1px 1px 1px  #555;
+    background-color: #ddd;
+
+}
+
+.login .form-row label {
+    padding-right: 0.5em;
+    line-height: 2em;
+    font-size: 1.3em;
+    clear: both;
+    color: rgb(39, 39, 39);
+}
+
+.login .form-row #id_username, .login .form-row #id_password {
+    clear: both;
+    padding: 8px;
+    width: 100%;
+    -webkit-box-sizing: border-box;
+       -moz-box-sizing: border-box;
+            box-sizing: border-box;
+}
+
+.login span.help {
+    font-size: 10px;
+    display: block;
+}
+
+.login .submit-row {
+    clear: both;
+    padding: 1em 0 0 9.4em;
+    margin-top: 5px;
+    border: none;
+    background: none;
+    text-align: left;
+    
+    
+}
+
+
+.login .submit-row input{
+    background-color: #ffffff;
+    color: rgb(0, 0, 0);
+    font-size: 17px;
+    
+
+}
+
+.login .submit-row input:hover{
+    box-shadow: 2px 2px 5px  #555;
+    background-color: #971200;
+}
+
+.login .password-reset-link {
+    text-align: center;
+}
