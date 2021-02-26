@@ -1,0 +1,57 @@
+package admin_login_testing;
+
+import org.openqa.selenium.By;
+import org.openqa.selenium.WebDriver;
+import org.openqa.selenium.firefox.FirefoxDriver;
+
+public class TestAdminLogin {
+	
+	public static void waitTime() {
+		try {
+			Thread.sleep(3000);
+		} catch (InterruptedException e) {
+			e.printStackTrace();
+		}
+	}
+
+	public static void main(String[] args) {
+		
+		System.setProperty("webdriver.gecko.driver", "D:\\1911_Sem_4\\SE LAB\\selenium\\geckodriver-v0.29.0-win64\\geckodriver.exe");
+		
+		WebDriver driver = new FirefoxDriver();
+		
+		driver.get("http://127.0.0.1:8000");
+		
+		TestAdminLogin.waitTime();
+		
+		driver.get("http://127.0.0.1:8000/admin/login/?next=/admin/");
+		
+		TestAdminLogin.waitTime();
+		
+		driver.findElement(By.id("id_username")).sendKeys("admin");
+		
+		TestAdminLogin.waitTime();
+		
+		driver.findElement(By.id("id_password")).sendKeys("admin");
+		
+		TestAdminLogin.waitTime();
+		
+		driver.findElement(By.id("log-in")).click();
+		
+		System.out.println("Log in successful");
+		
+		TestAdminLogin.waitTime();
+		
+		driver.get("http://127.0.0.1:8000/admin/");
+		
+		TestAdminLogin.waitTime();
+		
+		driver.findElement(By.xpath("/html/body/div/div[1]/div[2]/a[3]")).click();
+		
+		System.out.println("Log out successful");
+		
+		driver.get("http://127.0.0.1:8000/admin/logout/");
+
+	}
+
+}

@@ -1,0 +1,7 @@
+
+#links for the testing videos
+
+1) Tesing the admin login interface of django
+    ->with correct login details and then log out
+    ->with incorrect login details
+    ->video link: https://youtu.be/WFwjNKm8vTY

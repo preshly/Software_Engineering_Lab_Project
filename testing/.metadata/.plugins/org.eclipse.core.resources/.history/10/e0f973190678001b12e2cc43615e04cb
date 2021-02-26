@@ -1,0 +1,37 @@
+package admin_login_testing;
+
+import static org.junit.jupiter.api.Assertions.*;
+
+import org.junit.jupiter.api.BeforeAll;
+import org.junit.jupiter.api.Test;
+import org.openqa.selenium.WebDriver;
+import org.openqa.selenium.firefox.FirefoxDriver;
+
+class unitTestingAdminLogin {
+
+	WebDriver driver;
+	
+	public static void waitTime() {
+		try {
+			Thread.sleep(3000);
+		} catch (InterruptedException e) {
+			e.printStackTrace();
+		}
+	}
+	
+	@BeforeAll
+	public void setup() {
+		System.setProperty("webdriver.gecko.driver", "D:\\1911_Sem_4\\SE LAB\\selenium\\geckodriver-v0.29.0-win64\\geckodriver.exe");
+		
+		this.driver = new FirefoxDriver();
+		
+		driver.get("http://127.0.0.1:8000");
+		this.waitTime();
+	}
+	
+	@Test
+	void testInvalidAdminDetails() {
+		driver.get("http://127.0.0.1:8000/admin/login/?next=/admin/");
+	}
+
+}

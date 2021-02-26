@@ -1,0 +1,20 @@
+package admin_login_testing;
+
+import org.openqa.selenium.WebDriver;
+import org.openqa.selenium.firefox.FirefoxDriver;
+
+public class TestAdminLogin {
+
+	public static void main(String[] args) {
+		
+		System.setProperty("webdriver.gecko.driver", "D:\\1911_Sem_4\\SE LAB\\selenium\\geckodriver-v0.29.0-win64\\geckodriver.exe");
+		
+		WebDriver driver = new FirefoxDriver();
+		
+		driver.get("127.0.0.1:8000");
+		
+		driver.get("http://127.0.0.1:8000/admin/login/?next=/admin/");
+
+	}
+
+}

@@ -1,0 +1,17 @@
+package admin_login_testing;
+
+import static org.junit.jupiter.api.Assertions.*;
+
+import org.junit.jupiter.api.Test;
+import org.openqa.selenium.WebDriver;
+
+class unitTestingAdminLogin {
+
+	WebDriver driver;
+	
+	@Test
+	void test() {
+		fail("Not yet implemented");
+	}
+
+}
