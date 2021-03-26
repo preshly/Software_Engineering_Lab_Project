@@ -3,10 +3,10 @@ from django.http import HttpResponse
 # Create your views here.
 
 def index(request):
-    return HttpResponse("""<h1>Movie Home</h1>""")
+    return HttpResponse('''
+        <h1>Movie Home</h1>
+        <br/>
+        <a href='/movie/' style="font-size:20px; text-decoration:none; color:blue;">Visit our site </a>
+        ''')
 
-def signup(request):    
-    return render(request,'customer_html/Signup.html')
-
-def login(request):    
-    return render(request,'customer_html/login.html')    
+   

@@ -23,6 +23,5 @@ urlpatterns = [
     path('admin/', admin.site.urls),
     path('movie/',include('movie.urls')),
     path('', views.index),
-    path('login/',views.login),
-    path('signup/',views.signup),
+    
 ] + static(settings.MEDIA_URL,document_root=settings.MEDIA_ROOT)
