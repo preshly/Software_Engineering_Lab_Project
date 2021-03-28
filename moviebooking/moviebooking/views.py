@@ -8,5 +8,3 @@ def index(request):
         <br/>
         <a href='/movie/' style="font-size:20px; text-decoration:none; color:blue;">Visit our site </a>
         ''')
-
-   

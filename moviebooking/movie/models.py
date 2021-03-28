@@ -21,7 +21,6 @@ class Genre(models.Model):
     def __str__(self):
         return self.genre_name
 
-
 class Customer(models.Model):
     cust_id = models.AutoField
     email = models.EmailField()
@@ -30,4 +29,3 @@ class Customer(models.Model):
 
     def __str__(self):
         return self.username
-
