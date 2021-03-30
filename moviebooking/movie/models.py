@@ -1,5 +1,6 @@
 from django.db import models
 from django.core.validators import MinLengthValidator
+from datetime import datetime
 
 class Movie(models.Model):
     movie_id = models.AutoField
@@ -7,7 +8,7 @@ class Movie(models.Model):
     movie_language = models.CharField(max_length=30)
     movie_duration = models.IntegerField()
     movie_description = models.CharField(max_length=256, default="")
-    
+    movie_release_date = models.DateField(default=datetime.now)
     image = models.ImageField(upload_to='media/images', default="")
     def __str__(self):
         return self.movie_name
@@ -20,11 +21,10 @@ class Genre(models.Model):
     def __str__(self):
         return self.genre_name
 
-
 class Customer(models.Model):
     cust_id = models.AutoField
     email = models.EmailField()
-    username = models.CharField(max_length=10, validators=[MinLengthValidator(10)])
+    username = models.CharField(max_length=6, validators=[MinLengthValidator(4)])
     password = models.CharField(max_length=8, validators=[MinLengthValidator(8)])
 
     def __str__(self):
