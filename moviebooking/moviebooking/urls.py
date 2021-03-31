@@ -23,8 +23,8 @@ from django.conf.urls.static import static
 
 urlpatterns = [
     path('admin/', admin.site.urls),
-    path('movie/', include('movie.urls'), name='movie'),
-    path('', views.index, name='movieBooking')
+    path('', include('movie.urls'), name='movie'),
+    # path('', views.index, name='movieBooking')
 ] 
 
 urlpatterns += static(settings.MEDIA_URL,document_root=settings.MEDIA_ROOT) 

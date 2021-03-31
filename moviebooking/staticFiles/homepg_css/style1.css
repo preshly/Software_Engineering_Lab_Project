@@ -1,0 +1,184 @@
+.container {
+  position: relative;
+  text-align: center;
+  color: white;
+  padding:0px;
+  margin:0px;
+   
+}
+.img-blur{
+filter:blur(2px);
+
+}
+
+.bottom-left {
+  position: absolute;
+  bottom: 8px;
+  left: 16px;
+}
+
+.top-left {
+  position: absolute;
+  top: 8px;
+  left: 16px;
+}
+
+.top-right {
+  position: absolute;
+  top: 8px;
+  right: 16px;
+}
+
+.bottom-right {
+  position: absolute;
+  bottom: 8px;
+  right: 16px;
+}
+
+.centered {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  padding:15px;
+}
+
+.cenetered-text{
+color:white;
+font-size:50px;
+font-family: "Bookman";
+
+}
+.lefttop-text{
+color:white;
+font-size:30px;
+font-family: "Forte";
+}
+.s-button {
+  background-color:red;
+  border: none;
+  color: white;
+  padding: 10px 25px;
+  text-align: center;
+  text-decoration: none;
+  display: inline-block;
+  font-size: 16px;
+  border-radius:3%;
+}
+
+.s-button a,.s2-button a{
+  text-decoration: none;
+  color: white;
+}
+
+.s2-button {
+  background-color:black;
+  border: none;
+  color: white;
+  padding: 10px 25px;
+  text-align: center;
+  text-decoration: none;
+  display: inline-block;
+  font-size: 16px;
+  border-radius:3%;
+}
+
+
+form.example input[type=text] {
+  padding: 10px;
+  font-size: 17px;
+  border: 1px solid grey;
+  float: left;
+  width: 80%;
+  background: #f1f1f1;
+}
+
+form.example button {
+  float: left;
+  width: 20%;
+  padding: 10px;
+  background: red;
+  color: white;
+  font-size: 17px;
+  border: 1px solid grey;
+  border-left: none;
+  cursor: pointer;
+}
+
+form.example button:hover {
+  background: red;
+}
+
+form.example::after {
+  content: "";
+  clear: both;
+  display: table;
+}
+
+* {
+  box-sizing: border-box;
+}
+body{margin:0px;}
+
+.trending-container{
+height:500px;
+width:100%;
+background-color:black;
+}
+
+.trending-button{
+  margin:20px;
+  background-color:red;
+  border: none;
+  color: white;
+  padding: 10px 25px;
+  text-align: center;
+  text-decoration: none;
+  display: inline-block;
+  font-size: 16px;
+  border-radius:3%;
+}
+
+.booking-button{
+  background-color:black;
+  border: none;
+  color: white;
+  padding: 5px;
+  text-align: center;
+  text-decoration: none;
+  display: inline-block;
+  font-size: 16px;
+  border-radius:3%;
+  margin-left:10px;
+  margin-bottom:5px;
+  
+}
+
+.movie-title{
+font-weight: bold;
+font-family:arial;
+}
+
+.con-padding{
+margin:20px;
+background-color:white;
+}
+.card-img-top{
+border-radius:5px;
+}
+
+.card{
+border-radius:5px;
+padding:2px;
+}
+.card-text{
+margin-left:5%;
+margin-top:5%;
+}
+.movie-title{
+font-size:25px;
+font-weight:bold;
+margin-left:5%;
+margin-top:5%;
+margin-bottom:0px;
+}
