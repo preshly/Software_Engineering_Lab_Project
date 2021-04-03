@@ -29,21 +29,20 @@
           <span class="circle one"></span>
           <span class="circle two"></span>
 
-          <form>
+          <form action="/login/" method="POST">
             <h3 class="title">Sign in</h3>
-
+            {% csrf_token %}
             <div class="input-container">
-              <input type="text" id="name" name="username" class="input" required="required" />
-              <label for="">Email</label>
-              <span>Email</span>
+              <input type="text" id="name" name="username" class="input" placeholder="Username" required="required" />
+              
+              
             </div>
 
 
 
             <div class="input-container">
-              <input type="text" name="password" class="input" required="required" />
-              <label for="">Password</label>
-              <span>Password</span>
+              <input type="password" name="password" class="input" placeholder="Password" required="required" />
+              
             </div>
             <div class="form-group ">
               <h6 class="form-control"></h6>
@@ -54,9 +53,9 @@
             <br><br>
 
             <div class="input-container">
-              <!-- href="signup.php" -->
+             
               <p>Don't have an account? <a href="/signup">Sign Up</a>.</p>
-              <span>Password</span>
+              
             </div>
 
 

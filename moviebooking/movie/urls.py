@@ -4,8 +4,11 @@ from . import views
 
 urlpatterns = [
     path('', views.index, name='movieIndex'),
-    path('login/', views.login, name='customerLogin'),
-    path('signup/', views.signup, name='customerSignup'),
+    path('login/', views.customerLogin, name='customerLogin'),
+    path('logout/', views.customerLogout, name='customerLogout'),
+    path('signup/', views.customerSignup, name='customerSignup'),
+    path('customer_home/', views.customerHome, name='customerHome'),
+
 ] 
 
 admin.site.site_header = 'Movie Booking'

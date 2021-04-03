@@ -26,6 +26,6 @@ class Customer(models.Model):
     email = models.EmailField()
     username = models.CharField(max_length=6, validators=[MinLengthValidator(4)])
     password = models.CharField(max_length=8, validators=[MinLengthValidator(8)])
-
+    is_active = models.BooleanField(default = False)  
     def __str__(self):
         return self.username
