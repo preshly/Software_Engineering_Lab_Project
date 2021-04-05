@@ -2,7 +2,7 @@
   position: relative;
   text-align: center;
   color: white;
-  padding:0px;
+  padding-bottom:0px;
   margin:0px;
    
 }
@@ -34,7 +34,10 @@ filter:blur(2px);
   bottom: 8px;
   right: 16px;
 }
-
+.p-size{
+	width:60px;
+	height:60px;
+}
 .centered {
   position: absolute;
   top: 50%;
@@ -55,7 +58,7 @@ font-size:30px;
 font-family: "Forte";
 }
 .s-button {
-  background-color:red;
+  background-color:black;
   border: none;
   color: white;
   padding: 10px 25px;
@@ -66,10 +69,6 @@ font-family: "Forte";
   border-radius:3%;
 }
 
-.s-button a,.s2-button a{
-  text-decoration: none;
-  color: white;
-}
 
 .s2-button {
   background-color:black;
@@ -81,6 +80,28 @@ font-family: "Forte";
   display: inline-block;
   font-size: 16px;
   border-radius:3%;
+}
+
+.s3-button {
+	  padding: 10px 25px;
+  border: none;
+  width:20px;
+  height:20px;
+  color: white;color:red;
+  text-align: center;
+  text-decoration: none;
+  display: inline-block;
+  font-size: 36px;
+}
+
+.wrapper::-webkit-scrollbar{
+	
+	width:0;
+}
+.see-all{
+	padding-top:5px;
+	padding-left:20px;
+	padding-bottom:30px;
 }
 
 
@@ -120,14 +141,30 @@ form.example::after {
 }
 body{margin:0px;}
 
-.trending-container{
-height:500px;
+.t-container{
+height:1700px;
 width:100%;
 background-color:black;
+
 }
 
-.trending-button{
-  margin:20px;
+.item{
+	display:flex;
+	overflow-x:auto;
+}
+
+.items::-webkit-scrollbar{
+	display:none;
+}
+
+
+
+
+.t-button{
+  margin-left:20px;
+   margin-right:20px;
+   margin-top:20px;
+    margin-bottom:0px;
   background-color:red;
   border: none;
   color: white;
@@ -137,6 +174,7 @@ background-color:black;
   display: inline-block;
   font-size: 16px;
   border-radius:3%;
+ 
 }
 
 .booking-button{
@@ -182,6 +220,24 @@ margin-left:5%;
 margin-top:5%;
 margin-bottom:0px;
 }
+
+
+.chip {
+ justify-content: space-evenly;
+  display: inline-block;
+  margin-top:25px;
+   margin-bottom:25px;
+    margin-left:15px;
+ margin-right:15px;
+  padding: 0 25px;
+  height: 40px;
+  font-size: 16px;
+  line-height: 40px;
+  border-radius: 25px;
+  background-color: white;
+}
+
+
 
 
 
@@ -260,19 +316,4 @@ margin-bottom:0px;
   margin-bottom:0;
 }
 
-.s-button {
-  background-color:black;
-  border: none;
-  color: white;
-  padding: 10px 25px;
-  text-align: center;
-  text-decoration: none;
-  display: inline-block;
-  font-size: 16px;
-  border-radius:3%;
-}
-
-.disp_left{
-  float:left;
-  margin-left: 40px;
-}
+/* https://epicbootstrap.com/snippets/footer-dark */

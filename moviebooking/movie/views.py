@@ -1,11 +1,15 @@
 from django.shortcuts import render, redirect
 from django.http import HttpResponse
 from .forms import CustomerSignupForm
-from .models import Customer
+from .models import Customer,Movie
+
 # Create your views here.
 
 def index(request):
-   return render(request,'homepg_html/home_page.html')
+
+#    return render(request,'homepg_html/home_page.html')
+   movies = Movie.objects.raw('SELECT * FROM movie_movie order by random() limit 4')
+   return render(request,'homepg_html/home_page.html', {'movie': movies})
 
         
 
@@ -57,7 +61,9 @@ def customerLogin(request):
 
 def customerHome(request):
     if request.session['username'] != None:
-        return render(request,'homepg_html/customer_home.html')
+        movies = Movie.objects.raw('SELECT * FROM movie_movie order by random() limit 4')
+        return render(request,'homepg_html/customer_home.html', {'movie': movies})
+        # return render(request,'homepg_html/customer_home.html')
     else:
         return redirect('index')
 
