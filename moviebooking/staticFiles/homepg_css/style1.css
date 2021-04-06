@@ -170,6 +170,7 @@ border-radius:5px;
 .card{
 border-radius:5px;
 padding:2px;
+height: 360px;
 }
 .card-text{
 margin-left:5%;

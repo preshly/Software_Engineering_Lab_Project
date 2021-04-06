@@ -72,11 +72,11 @@ def customerHome(request):
             message = 'You are logged in as \'' + customer.username + '\''
             error = 1
             messages.success(request, message)
-            return render(request,'homepg_html/customer_home.html', {'movie': movies, 'error': error} )
+            return render(request,'homepg_html/customer_home.html', {'movie': movies, 'error': error, 'username':'  ' + customer.username})
 
     except customer.DoesNotExist as e:
         return redirect(index)
-
+ 
 def customerLogout(request):
     if request.session['username'] != None:
         

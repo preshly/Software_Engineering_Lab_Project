@@ -1,20 +1,35 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-    
+    <link rel="stylesheet" href="/static/modals/style1.css">
 </head>
 <body>
     {% for movie in movie %}
  
-    <div class="card con-padding disp_left" style="width: 15rem;">
-      <img class="card-img-top" src="/media/{{ movie.image }} " alt="Card image cap" style="width:100%;height:200px;">
+    <div class="card con-padding disp_left " style="width: 15rem;">
+
+      <a href="#openModal"><img class="card-img-top" src="/media/{{ movie.image }} " alt="Card image cap" style="width:100%;height:200px;"></a> 
       <div class="card-body">
-        <h5 class=" movie-title">{{ movie.movie_name }}</h5>
+        <a href="#openModal"><h6 class=" movie-title">{{ movie.movie_name }}</h6></a>
         <p class="card-text">{{ movie.movie_release_date }} ‧ {{ movie.movie_duration }} </p>
         
         <a href="#" class="booking-button">Book Ticket </a>    
         </div>
+    </div> 
+
+    <div id="openModal" class="modalDialog">
+     <div><a href="#close" title="Close" class="close">X</a>
+      <img class="card-img-top" src="/media/{{ movie.image }} " alt="Card image cap" style="width:100%;height:200px;">
+      <h6 class=" movie-title">{{ movie.movie_name }}</h6>
+      <p class="card-text">{{ movie.movie_description }}</p>
+      </div>
     </div>    
+
+    
+
+    
+
+
 {% endfor %}
 </body>
 </html>
