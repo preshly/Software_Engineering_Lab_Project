@@ -81,6 +81,11 @@ font-family: "Forte";
   display: inline-block;
   font-size: 16px;
   border-radius:3%;
+  
+}
+
+.s-button:hover,.s2-button:hover{
+  background-color: green;
 }
 
 
@@ -152,6 +157,8 @@ background-color:black;
   margin-left:10px;
   margin-bottom:5px;
   
+  position: absolute;  /*changed*/
+  bottom: 0;
 }
 
 .movie-title{
@@ -171,6 +178,9 @@ border-radius:5px;
 border-radius:5px;
 padding:2px;
 height: 360px;
+
+position:relative;      /*changed*/
+
 }
 .card-text{
 margin-left:5%;
@@ -276,4 +286,9 @@ margin-bottom:0px;
 .disp_left{
   float:left;
   margin-left: 40px;
+}
+
+.removeUnderline{       /*changed*/
+  text-decoration: none;
+  color:black;
 }
