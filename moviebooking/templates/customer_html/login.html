@@ -4,13 +4,38 @@
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>Login</title>
+  <title>BookMyMovie | Login</title>
   <link rel="stylesheet" href="/static/customer_css/style_for_forms.css" />
   <!-- <link rel="stylesheet" href="style.css" /> -->
   <script src="https://kit.fontawesome.com/64d58efce2.js" crossorigin="anonymous"></script>
 </head>
 
 <body>
+
+  {% include 'messages/message.html'%}
+ 
+    {% if error == 0 %}
+      <style>
+          .alert{ 
+          background-color: #f2dede;
+          color: #a94442;
+          }  
+          .closebtn{
+          color: #a94442;
+          }
+      </style>
+    {% elif error == 1 %}
+      <style>
+          .alert{ 
+          background-color: #dff0d8;
+          color: #3c763d;
+          } 
+          .closebtn{
+          color: #3c763d;
+          }
+      </style>
+    {% endif %}
+
   <div class="container">
     <span class="big-circle"></span>
     <!--<img src="img/shape.png" class="square" alt="" /> -->
