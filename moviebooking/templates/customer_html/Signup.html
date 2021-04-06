@@ -6,6 +6,7 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   <title>Login</title>
   <link rel="stylesheet" href="/static/customer_css/style_for_forms.css" />
+  <script src="/static/signup_js/valid.js" defer></script>
   <!-- <link rel="stylesheet" href="style.css" /> -->
   <script src="https://kit.fontawesome.com/64d58efce2.js" crossorigin="anonymous"></script>
 </head>
@@ -29,34 +30,34 @@
           <span class="circle one"></span>
           <span class="circle two"></span>
 
-          <form action="/signup/" method="POST">
+          <form action="/signup/" method="POST" name="signup_form" onsubmit ="return confirmPassword()">
             <h3 class="title">Sign in</h3>
             {% csrf_token %}   
             
             <div class="input-container">
-              <input type="text" id="name" name="username" class="input" placeholder="Username" required="required" />
+              <input type="text" id="username" name="username" class="input" placeholder="Username" pattern=".{2,6}" title=" max 6 characters only" required="required" />
               
               
             </div>
 
             <div class="input-container">
-              <input type="email" id="name" name="email" class="input" placeholder="Email" required="required" />
+              <input type="email" id="email" name="email" class="input" placeholder="Email" pattern="^[a-zA-Z0-9+_.-]+@[a-zA-Z0-9.-]+.+$" title="Invalid email"  required="required" />
               
               
             </div>
 
             <div class="input-container">
-              <input type="password" name="password" class="input" placeholder="Password" required="required" />
+              <input type="password" name="password" id="p1"  class="input" placeholder="Password" pattern=".{8}" title="Eight characters only"   required="required" />
               
               
             </div>
             <div class="input-container">
-              <input type="password" name="password1" class="input" placeholder="Confirm Password" required="required" />
+              <input type="password" name="password1" id="p2" class="input" placeholder="Confirm Password" pattern=".{8}" title="Eight characters only" required="required" />
               
              
             </div>
             <div class="form-group ">
-              <h6 class="form-control"></h6>
+              <h6 class="form-control"><span id = "message" style="color:blue"></span></h6>
               <span class="help-block"></span>
               <br>
             </div>

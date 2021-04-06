@@ -13,6 +13,8 @@ class CustomerSignupForm(forms.Form):
     
     def validate(self):
         super(CustomerSignupForm, self).clean()
+        if len(self.cleaned_data.get['username'] )!=6:
+            raise ValueError(_('username should have 6 characters only!!'))
         if self.cleaned_data.get['password'] != self.cleaned_data.get['password1']:
             raise ValueError(_('Passwords not matching'))
 

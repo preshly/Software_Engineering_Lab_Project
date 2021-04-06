@@ -24,7 +24,7 @@ class Genre(models.Model):
 class Customer(models.Model):
     cust_id = models.AutoField
     email = models.EmailField()
-    username = models.CharField(max_length=6, validators=[MinLengthValidator(4)])
+    username = models.CharField(max_length=6, validators=[MinLengthValidator(6)])
     password = models.CharField(max_length=8, validators=[MinLengthValidator(8)])
     is_active = models.BooleanField(default = False)  
     def __str__(self):
