@@ -17,18 +17,10 @@
 ## (Comments)
 #Sample Feature Definition Template
 
-Feature: Movie Customer Signup
-  I want to signup to the BookMyMovie website
+Feature: Invalid Customer login
 
-  
-  Scenario: Customer Signup
-    Given I want to signup 
-    And The website is open
-    When I click on signup 
-    And enter the correct details with unique username
-    And click on signup
-    Then I should get register and able to login
-    When I am prompted to login
-    And I enter correct credentials
-    Then I should be able to login
-
+  Scenario: Invalid Login
+    Given I want to login to the website
+    And I click on log in
+    When enter invalid login credentials
+    Then error message should be displayed

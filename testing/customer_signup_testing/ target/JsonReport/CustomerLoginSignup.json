@@ -3,7 +3,124 @@
     "line": 20,
     "elements": [
       {
-        "start_timestamp": "2021-04-07T06:41:26.022Z",
+        "start_timestamp": "2021-04-07T11:41:24.223Z",
+        "line": 24,
+        "name": "Customer Signup",
+        "description": "",
+        "id": "movie-customer-signup;customer-signup",
+        "type": "scenario",
+        "keyword": "Scenario",
+        "steps": [
+          {
+            "result": {
+              "duration": 6984100,
+              "status": "passed"
+            },
+            "line": 25,
+            "name": "I want to signup",
+            "match": {
+              "location": "customer_signup_testing.MovieCustomerSignup.i_want_to_signup()"
+            },
+            "keyword": "Given "
+          },
+          {
+            "result": {
+              "duration": 11833595400,
+              "status": "passed"
+            },
+            "line": 26,
+            "name": "The website is open",
+            "match": {
+              "location": "customer_signup_testing.MovieCustomerSignup.the_website_is_open()"
+            },
+            "keyword": "And "
+          },
+          {
+            "result": {
+              "duration": 310000100,
+              "status": "passed"
+            },
+            "line": 27,
+            "name": "I click on signup",
+            "match": {
+              "location": "customer_signup_testing.MovieCustomerSignup.i_click_on_signup()"
+            },
+            "keyword": "When "
+          },
+          {
+            "result": {
+              "duration": 3001266300,
+              "status": "passed"
+            },
+            "line": 28,
+            "name": "enter the correct details with unique username",
+            "match": {
+              "location": "customer_signup_testing.MovieCustomerSignup.enter_the_correct_details_with_unique_username()"
+            },
+            "keyword": "And "
+          },
+          {
+            "result": {
+              "duration": 2060865400,
+              "status": "passed"
+            },
+            "line": 29,
+            "name": "I should get register and able to login",
+            "match": {
+              "location": "customer_signup_testing.MovieCustomerSignup.i_should_get_register_and_able_to_login()"
+            },
+            "keyword": "Then "
+          },
+          {
+            "result": {
+              "status": "passed"
+            },
+            "line": 30,
+            "name": "I am prompted to login",
+            "match": {
+              "location": "customer_signup_testing.MovieCustomerSignup.i_am_prompted_to_login()"
+            },
+            "keyword": "When "
+          },
+          {
+            "result": {
+              "duration": 2991086800,
+              "status": "passed"
+            },
+            "line": 31,
+            "name": "I enter correct credentials",
+            "match": {
+              "location": "customer_signup_testing.MovieCustomerSignup.i_enter_correct_credentials()"
+            },
+            "keyword": "And "
+          },
+          {
+            "result": {
+              "duration": 4092511100,
+              "status": "passed"
+            },
+            "line": 32,
+            "name": "I should be able to login",
+            "match": {
+              "location": "customer_signup_testing.MovieCustomerSignup.i_should_be_able_to_login()"
+            },
+            "keyword": "Then "
+          }
+        ]
+      }
+    ],
+    "name": "Movie Customer Signup",
+    "description": "  I want to signup to the BookMyMovie website",
+    "id": "movie-customer-signup",
+    "keyword": "Feature",
+    "uri": "file:src/test/resources/Feature/customer_signup.feature",
+    "tags": []
+  },
+  {
+    "line": 20,
+    "elements": [
+      {
+        "start_timestamp": "2021-04-07T11:41:48.759Z",
         "line": 23,
         "name": "Login",
         "description": "",
@@ -13,7 +130,7 @@
         "steps": [
           {
             "result": {
-              "duration": 5998500,
+              "duration": 998500,
               "status": "passed"
             },
             "line": 24,
@@ -25,7 +142,7 @@
           },
           {
             "result": {
-              "duration": 10794194500,
+              "duration": 8560036500,
               "status": "passed"
             },
             "line": 25,
@@ -37,7 +154,7 @@
           },
           {
             "result": {
-              "duration": 485005600,
+              "duration": 528995300,
               "status": "passed"
             },
             "line": 26,
@@ -49,7 +166,7 @@
           },
           {
             "result": {
-              "duration": 2850615700,
+              "duration": 1528721100,
               "status": "passed"
             },
             "line": 27,
@@ -61,7 +178,7 @@
           },
           {
             "result": {
-              "duration": 13999200,
+              "duration": 10000500,
               "status": "passed"
             },
             "line": 28,
@@ -73,7 +190,7 @@
           },
           {
             "result": {
-              "duration": 4099901800,
+              "duration": 4057976400,
               "status": "passed"
             },
             "line": 29,
@@ -85,7 +202,7 @@
           },
           {
             "result": {
-              "duration": 13996900,
+              "duration": 10002700,
               "status": "passed"
             },
             "line": 30,
@@ -97,7 +214,7 @@
           },
           {
             "result": {
-              "duration": 78002500,
+              "duration": 56001900,
               "status": "passed"
             },
             "line": 31,
@@ -109,7 +226,7 @@
           },
           {
             "result": {
-              "duration": 1143999000,
+              "duration": 899218100,
               "status": "passed"
             },
             "line": 32,
@@ -121,7 +238,7 @@
           },
           {
             "result": {
-              "duration": 2301229300,
+              "duration": 2926967300,
               "status": "passed"
             },
             "line": 33,
@@ -139,136 +256,6 @@
     "id": "login-to-bookmymovie-website",
     "keyword": "Feature",
     "uri": "file:src/test/resources/Feature/movie_customer_login.feature",
-    "tags": []
-  },
-  {
-    "line": 20,
-    "elements": [
-      {
-        "start_timestamp": "2021-04-07T06:41:48.049Z",
-        "line": 24,
-        "name": "Customer Signup",
-        "description": "",
-        "id": "movie-customer-signup;customer-signup",
-        "type": "scenario",
-        "keyword": "Scenario",
-        "steps": [
-          {
-            "result": {
-              "duration": 996700,
-              "status": "passed"
-            },
-            "line": 25,
-            "name": "I want to signup",
-            "match": {
-              "location": "customer_signup_testing.MovieCustomerSignup.i_want_to_signup()"
-            },
-            "keyword": "Given "
-          },
-          {
-            "result": {
-              "duration": 9580899600,
-              "status": "passed"
-            },
-            "line": 26,
-            "name": "The website is open",
-            "match": {
-              "location": "customer_signup_testing.MovieCustomerSignup.the_website_is_open()"
-            },
-            "keyword": "And "
-          },
-          {
-            "result": {
-              "duration": 316997400,
-              "status": "passed"
-            },
-            "line": 27,
-            "name": "I click on signup",
-            "match": {
-              "location": "customer_signup_testing.MovieCustomerSignup.i_click_on_signup()"
-            },
-            "keyword": "When "
-          },
-          {
-            "result": {
-              "duration": 305009200,
-              "status": "passed"
-            },
-            "line": 28,
-            "name": "enter the correct details with unique username",
-            "match": {
-              "location": "customer_signup_testing.MovieCustomerSignup.enter_the_correct_details_with_unique_username()"
-            },
-            "keyword": "And "
-          },
-          {
-            "result": {
-              "duration": 659391100,
-              "status": "passed"
-            },
-            "line": 29,
-            "name": "click on signup",
-            "match": {
-              "location": "customer_signup_testing.MovieCustomerSignup.click_on_signup()"
-            },
-            "keyword": "And "
-          },
-          {
-            "result": {
-              "duration": 33001600,
-              "status": "passed"
-            },
-            "line": 30,
-            "name": "I should get register and able to login",
-            "match": {
-              "location": "customer_signup_testing.MovieCustomerSignup.i_should_get_register_and_able_to_login()"
-            },
-            "keyword": "Then "
-          },
-          {
-            "result": {
-              "duration": 1004700,
-              "status": "passed"
-            },
-            "line": 31,
-            "name": "I am prompted to login",
-            "match": {
-              "location": "customer_signup_testing.MovieCustomerSignup.i_am_prompted_to_login()"
-            },
-            "keyword": "When "
-          },
-          {
-            "result": {
-              "duration": 1714371100,
-              "status": "passed"
-            },
-            "line": 32,
-            "name": "I enter correct credentials",
-            "match": {
-              "location": "customer_signup_testing.MovieCustomerSignup.i_enter_correct_credentials()"
-            },
-            "keyword": "And "
-          },
-          {
-            "result": {
-              "duration": 2799141000,
-              "status": "passed"
-            },
-            "line": 33,
-            "name": "I should be able to login",
-            "match": {
-              "location": "customer_signup_testing.MovieCustomerSignup.i_should_be_able_to_login()"
-            },
-            "keyword": "Then "
-          }
-        ]
-      }
-    ],
-    "name": "Movie Customer Signup",
-    "description": "  I want to signup to the BookMyMovie website",
-    "id": "movie-customer-signup",
-    "keyword": "Feature",
-    "uri": "file:src/test/resources/Feature/movie_customer_signup.feature",
     "tags": []
   }
 ]
