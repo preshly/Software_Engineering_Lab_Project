@@ -1,0 +1,229 @@
+[
+  {
+    "line": 20,
+    "elements": [
+      {
+        "start_timestamp": "2021-04-07T06:24:39.903Z",
+        "line": 23,
+        "name": "Login",
+        "description": "",
+        "id": "login-to-bookmymovie-website;login",
+        "type": "scenario",
+        "keyword": "Scenario",
+        "steps": [
+          {
+            "result": {
+              "status": "undefined"
+            },
+            "line": 24,
+            "name": "I want to login",
+            "match": {},
+            "keyword": "Given "
+          },
+          {
+            "result": {
+              "status": "skipped"
+            },
+            "line": 25,
+            "name": "the website is open",
+            "match": {},
+            "keyword": "And "
+          },
+          {
+            "result": {
+              "duration": 998200,
+              "status": "skipped"
+            },
+            "line": 26,
+            "name": "I click on login",
+            "match": {},
+            "keyword": "When "
+          },
+          {
+            "result": {
+              "duration": 1002600,
+              "status": "skipped"
+            },
+            "line": 27,
+            "name": "enter the correct details",
+            "match": {},
+            "keyword": "And "
+          },
+          {
+            "result": {
+              "duration": 1011300,
+              "status": "skipped"
+            },
+            "line": 28,
+            "name": "I should be redirected to the customer home page",
+            "match": {},
+            "keyword": "Then "
+          },
+          {
+            "result": {
+              "duration": 1003700,
+              "status": "skipped"
+            },
+            "line": 29,
+            "name": "I click on any movie image or name",
+            "match": {},
+            "keyword": "When "
+          },
+          {
+            "result": {
+              "duration": 1001100,
+              "status": "skipped"
+            },
+            "line": 30,
+            "name": "I a modal of movie details should be visible",
+            "match": {},
+            "keyword": "Then "
+          },
+          {
+            "result": {
+              "duration": 1997100,
+              "status": "skipped"
+            },
+            "line": 31,
+            "name": "I close the modal",
+            "match": {},
+            "keyword": "When "
+          },
+          {
+            "result": {
+              "duration": 1004000,
+              "status": "skipped"
+            },
+            "line": 32,
+            "name": "click on logout",
+            "match": {},
+            "keyword": "And "
+          },
+          {
+            "result": {
+              "status": "skipped"
+            },
+            "line": 33,
+            "name": "I should be logged out",
+            "match": {},
+            "keyword": "Then "
+          }
+        ]
+      }
+    ],
+    "name": "Login to BookMyMovie website",
+    "description": "  I want login to the website",
+    "id": "login-to-bookmymovie-website",
+    "keyword": "Feature",
+    "uri": "file:src/test/resources/Feature/movie_customer_login.feature",
+    "tags": []
+  },
+  {
+    "line": 20,
+    "elements": [
+      {
+        "start_timestamp": "2021-04-07T06:24:40.388Z",
+        "line": 24,
+        "name": "Customer Signup",
+        "description": "",
+        "id": "movie-customer-signup;customer-signup",
+        "type": "scenario",
+        "keyword": "Scenario",
+        "steps": [
+          {
+            "result": {
+              "status": "undefined"
+            },
+            "line": 25,
+            "name": "I want to signup",
+            "match": {},
+            "keyword": "Given "
+          },
+          {
+            "result": {
+              "duration": 1002200,
+              "status": "skipped"
+            },
+            "line": 26,
+            "name": "The website is open",
+            "match": {},
+            "keyword": "And "
+          },
+          {
+            "result": {
+              "status": "skipped"
+            },
+            "line": 27,
+            "name": "I click on signup",
+            "match": {},
+            "keyword": "When "
+          },
+          {
+            "result": {
+              "duration": 1002500,
+              "status": "skipped"
+            },
+            "line": 28,
+            "name": "enter the correct details with unique username",
+            "match": {},
+            "keyword": "And "
+          },
+          {
+            "result": {
+              "duration": 1003200,
+              "status": "skipped"
+            },
+            "line": 29,
+            "name": "click on signup",
+            "match": {},
+            "keyword": "And "
+          },
+          {
+            "result": {
+              "duration": 5997200,
+              "status": "skipped"
+            },
+            "line": 30,
+            "name": "I should get register and able to login",
+            "match": {},
+            "keyword": "Then "
+          },
+          {
+            "result": {
+              "duration": 1001700,
+              "status": "skipped"
+            },
+            "line": 31,
+            "name": "I am prompted to login",
+            "match": {},
+            "keyword": "When "
+          },
+          {
+            "result": {
+              "status": "skipped"
+            },
+            "line": 32,
+            "name": "I enter correct credentials",
+            "match": {},
+            "keyword": "And "
+          },
+          {
+            "result": {
+              "status": "skipped"
+            },
+            "line": 33,
+            "name": "I should be able to login",
+            "match": {},
+            "keyword": "Then "
+          }
+        ]
+      }
+    ],
+    "name": "Movie Customer Signup",
+    "description": "  I want to signup to the BookMyMovie website",
+    "id": "movie-customer-signup",
+    "keyword": "Feature",
+    "uri": "file:src/test/resources/Feature/movie_customer_signup.feature",
+    "tags": []
+  }
+]

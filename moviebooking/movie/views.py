@@ -16,15 +16,14 @@ def index(request):
 def customerSignup(request):
     if request.method == 'POST':
         customerForm = CustomerSignupForm(request.POST)
+        if len(customerForm.errors) == 1:
+            if customerForm.errors['username'] == ['Customer with this Username already exists.'] :
+                message = 'The username is already used. Please use anther username.'
+                error = 0
+                messages.error(request, message)
+                return render(request,'customer_html/Signup.html', {'error': error} )
 
-        if customerForm.errors['username'] == ['Customer with this Username already exists.'] :
-            message = 'The username is already used. Please use anther username.'
-            error = 0
-            messages.error(request, message)
-            return render(request,'customer_html/Signup.html', {'error': error} )
-        
-        if customerForm.is_valid():
-    
+        if customerForm.is_valid():   
             username = customerForm.data['username']
             email = customerForm.data['email']
             password = customerForm.data['password']
@@ -37,6 +36,8 @@ def customerSignup(request):
             return returnError(request, 
                 'Your account is succefully created. Please login with your credentials.', 
                 'customer_html/login.html', 1)
+        
+        
 
     return render(request,'customer_html/Signup.html')
 
