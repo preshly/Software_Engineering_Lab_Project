@@ -14,6 +14,13 @@ import io.cucumber.java.en.When;
 
 public class MovieCustomerSignup {
 	
+	private static void waitTime() {
+		try {
+			Thread.sleep(2000);
+		}catch(InterruptedException e) {
+			
+		}
+	}
 	private WebDriver driver;
 	
 	@Given("I want to signup")
@@ -42,11 +49,7 @@ public class MovieCustomerSignup {
 	    driver.findElement(By.id("email")).sendKeys("testin@unigoa.ac.in");
 	    driver.findElement(By.id("p1")).sendKeys("testin1g");
 	    driver.findElement(By.id("p2")).sendKeys("testin1g");
-	    
-	}
-
-	@When("click on signup")
-	public void click_on_signup() {
+	    waitTime();
 	    driver.findElement(By.xpath("/html/body/div/div/div/div/form/input[2]")).click();
 	}
 
@@ -56,6 +59,7 @@ public class MovieCustomerSignup {
 	    String expectedUrl = "http://127.0.0.1:8000/signup/";
 	    
 	    assertEquals(returnUrl, expectedUrl);
+	    waitTime();
 	}
 
 	@When("I am prompted to login")
@@ -67,7 +71,9 @@ public class MovieCustomerSignup {
 	public void i_enter_correct_credentials() {
 		driver.findElement(By.id("name")).sendKeys("testin");
 		driver.findElement(By.xpath("/html/body/div/div/div/div/form/div[2]/input")).sendKeys("testin1g");
+		waitTime();
 		driver.findElement(By.xpath("/html/body/div/div/div/div/form/input[2]")).click();
+		
 	}
 
 	@Then("I should be able to login")
@@ -76,7 +82,7 @@ public class MovieCustomerSignup {
 	    String expectedUrl = "http://127.0.0.1:8000/customer_home/";
 	    
 	    assertEquals(returnUrl, expectedUrl);
-	    
+	    waitTime();
 	    driver.quit();
 	}
 
