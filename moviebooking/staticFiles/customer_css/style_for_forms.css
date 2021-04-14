@@ -410,3 +410,10 @@ textarea.input {
 body{
 	background-color:#080808;
 }
+
+/*for link to home page in bookings.html*/
+
+#linkToHomePage{
+  text-decoration: none;
+  color: #1abc9c;
+}

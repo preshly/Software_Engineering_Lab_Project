@@ -1,5 +1,5 @@
 from django.db import models
-from django.core.validators import MinLengthValidator
+from django.core.validators import MinLengthValidator, MaxValueValidator
 from datetime import datetime
 
 class Movie(models.Model):
@@ -10,6 +10,7 @@ class Movie(models.Model):
     movie_description = models.CharField(max_length=256, default="")
     movie_release_date = models.DateField(default=datetime.now)
     image = models.ImageField(upload_to='media/images', default="")
+    is_screening = models.BooleanField(default=False)
     def __str__(self):
         return self.movie_name
 
@@ -29,3 +30,35 @@ class Customer(models.Model):
     is_active = models.BooleanField(default = False)  
     def __str__(self):
         return self.username
+
+class Show(models.Model):
+    show_id = models.AutoField
+    show_movie = models.ForeignKey('Movie', on_delete=models.CASCADE, default=None, related_name='show_movie')
+    show_date = models.DateField()
+    show_price = models.IntegerField()
+    
+    
+    class TimeChoices(models.IntegerChoices):
+        Nine = 9
+        Eleven = 11
+        Thirteen = 13
+        Fifteen = 15
+        Seventeen = 17
+        Nineteen = 19
+
+    show_time = models.IntegerField(choices=TimeChoices.choices)
+    show_seats = models.IntegerField(default=80)
+    show_booked_seats = models.IntegerField(default=0)
+    
+    def __str__(self):
+        return str(self.show_movie) + ' | ' + str(self.show_date) + ' | ' + str(self.show_time)
+
+class Booking(models.Model):
+    booking_id = models.AutoField
+    user = models.ForeignKey(Customer, on_delete=models.CASCADE)
+    show = models.ForeignKey(Show, on_delete=models.CASCADE)
+    number_of_tickets = models.IntegerField(validators=[MaxValueValidator(5)] )
+
+    def __str__(self):
+        return str(self.user) + ' | ' + str(self.show) + ' | ' + str(self.number_of_tickets)
+

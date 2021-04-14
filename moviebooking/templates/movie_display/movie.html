@@ -8,12 +8,12 @@
  
     <div class="card con-padding disp_left " style="width: 15rem;">
 
-      <a href="#openModal{{ movie.pk }}"><img class="card-img-top" src="/media/{{ movie.image }} " alt="Card image cap" style="width:100%;height:200px;"></a> 
+      <a href="#openModal{{ movie.pk }}"><img class="card-img-top" src="/media/{{ movie.image }} " alt="{{ movie.image }}" style="width:100%;height:200px;"></a> 
       <div class="card-body">
         <a href="#openModal{{ movie.pk }}" class="removeUnderline"><h6 class=" movie-title">{{ movie.movie_name }}</h6></a>
         <p class="card-text">{{ movie.movie_release_date }} ‧ {{ movie.movie_duration }} </p>
         
-        <a href="#" class="booking-button">Book Ticket </a>    
+        <a href="{% url 'bookings' movie_id=movie.pk %}" class="booking-button">Book Ticket </a>    
         </div>
     </div> 
 
