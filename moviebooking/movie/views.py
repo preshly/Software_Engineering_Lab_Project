@@ -39,6 +39,15 @@ def customerSignup(request):
     return render(request,'customer_html/Signup.html')
 
 def customerLogin(request):
+    try:
+        if request.session['username'] != None:
+            message = 'Please confirm.'
+            error = 1
+            messages.success(request, message)
+            return redirect(customerHome)   
+    except Exception as e:
+        pass
+
     if request.method == 'POST':
         username = request.POST['username'] 
         password = request.POST['password'] 
@@ -51,16 +60,11 @@ def customerLogin(request):
             if not originalPassword == None:
             
                 if originalPassword == password:
-                    if request.session['username'] != None:
-                        message = 'Please confirm.'
-                        error = 1
-                        messages.success(request, message)
-                        return redirect(customerHome)
                     
-                    request.session['username'] = username
-                    customer.is_active = True
-                    customer.save()
-                    return redirect(customerHome)
+                        request.session['username'] = username
+                        customer.is_active = True
+                        customer.save()
+                        return redirect(customerHome)
                 else:
                     return returnError(request, 'Incorrect Username or Password', 'customer_html/login.html', 0)
         except Customer.DoesNotExist as e:
