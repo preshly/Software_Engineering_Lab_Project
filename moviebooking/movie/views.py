@@ -1,7 +1,7 @@
 from django.shortcuts import render, redirect
 from django.http import HttpResponse
 from .forms import CustomerSignupForm
-from .models import Customer,Movie, Show, Booking
+from .models import Customer,Movie, Show, Booking,Reviews
 from .displayErrors import returnError
 from django.contrib import messages
 
@@ -179,4 +179,48 @@ def bookingMovie(request):
                     return redirect(customerHome)
     except Exception as e:
         return redirect(index)
-  
+
+
+def comment (request, movie_id):
+    if request.session['username'] != None:
+        try:
+            movie = Movie.objects.get(pk= movie_id)
+            #print(movie)
+            request.session['movie'] = movie.pk
+            args = {'movie':movie}
+            #print(args)
+            # return render(request, 'comments/comment.html', args )
+            
+        except Exception as e:
+            message = 'Some error occurred. Please try again later.' 
+            error = 1
+            messages.success(request, message) 
+            return redirect(customerHome)
+    else:
+        
+        return redirect(customerLogin) 
+    return render(request, 'comments/comment.html', args )
+
+def movieComments(request):      
+    try:
+        if request.session['username'] != None:
+            
+            if request.method == 'POST':                
+                customer = Customer.objects.get(username=request.session['username'])
+                
+                movie_id = request.session['movie']
+
+                movie = Movie.objects.get(pk=movie_id)
+                
+                formComment = request.POST['comment']
+
+                #print(formComment)
+                comment = Reviews(disp_movie=movie,feedback_data=formComment,users=customer)
+                comment.save()
+                message = 'Comment Added'
+                error = 1
+               
+                messages.success(request, message)
+                return redirect(customerHome)
+    except Exception as e:
+        return redirect(index)

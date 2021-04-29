@@ -1,0 +1,59 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>BookMyMovie | Bookings</title>
+  <link rel="stylesheet" href="/static/customer_css/style_for_forms.css" />
+  <!-- <link rel="stylesheet" href="style.css" /> -->
+  <script src="https://kit.fontawesome.com/64d58efce2.js" crossorigin="anonymous"></script>
+</head>
+
+<body>
+
+  <div class="container">
+    <span class="big-circle"></span>
+    <div class="form">
+      <div class="contact-info">
+       <h3 class="title"><a href="/customer_home/" id='linkToHomePage'> BookMyMovie </a></h3> 
+        
+        <br><br><br>
+        <div class="contact-form">
+          <span class="circle one"></span>
+          <span class="circle two"></span>
+
+          <form action="{% url 'movieComments' %}" method="POST">{% csrf_token %}
+
+            <div class="input-container">
+              <input type="text" id="movie_name" name="movie_name" class="input" value="{{movie.movie_name}}" disabled/>                           
+            </div>
+
+            
+                          
+
+              <div class="input-container">
+                <p>Enter your comment below</p>
+                <textarea rows="4" cols="50" name="comment" placeholder="Enter your comment here..." >
+                </textarea>
+                                             
+              </div>
+
+              <input type="submit" value="Add Comment" class="btn" />
+              <br><br>
+  
+             
+
+          </form>
+        </div>
+
+      </div>
+
+
+      <img style="padding-top:28%;padding-bottom:15%;padding-right:5%;padding-left:0%"
+        src="/media/{{ movie.image }}" width="500" height="600">
+    </div>
+
+</body>
+
+</html>

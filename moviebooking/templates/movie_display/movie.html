@@ -13,7 +13,9 @@
         <a href="#openModal{{ movie.pk }}" class="removeUnderline"><h6 class=" movie-title">{{ movie.movie_name }}</h6></a>
         <p class="card-text">{{ movie.movie_release_date }} ‧ {{ movie.movie_duration }} </p>
         
-        <a href="{% url 'bookings' movie_id=movie.pk %}" class="booking-button">Book Ticket </a>    
+        <a href="{% url 'bookings' movie_id=movie.pk %}" class="booking-button">Book Ticket </a> 
+         <!--changed  -->
+        <a href="{% url 'comments' movie_id=movie.pk %}" class="booking-button2">Comment</a>      
         </div>
     </div> 
 

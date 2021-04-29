@@ -62,3 +62,12 @@ class Booking(models.Model):
     def __str__(self):
         return str(self.user) + ' | ' + str(self.show) + ' | ' + str(self.number_of_tickets)
 
+
+class Reviews(models.Model):
+   feedback_count = models.AutoField
+   feedback_data = models.CharField(max_length=100  ,default="") 
+   users =  models.ForeignKey(Customer, on_delete=models.CASCADE)
+   disp_movie =  models.ForeignKey(Movie, on_delete=models.CASCADE)
+
+   def __str__(self):
+      return str(self.users) + ' | ' + str(self.feedback_data) + ' | ' + str(self. disp_movie)

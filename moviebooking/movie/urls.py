@@ -10,6 +10,8 @@ urlpatterns = [
     path('customer_home/', views.customerHome, name='customerHome'),
     path('bookings/<int:movie_id>', views.bookings, name='bookings'),
     path('bookingMovie/', views.bookingMovie, name='movieBookings'),
+    path('comments/<int:movie_id>',views.comment, name='comments'),
+    path('movieComments/', views.movieComments, name='movieComments'),
 
 ] 
 
