@@ -253,3 +253,16 @@ def movieComments(request):
                 return redirect(customerHome)
     except Exception as e:
         return redirect(index)
+
+def bookingList(request):
+    if request.session['username'] != None:
+        movies = Booking.objects.filter(user=request.session['username'])
+        return render(request, 'bookings/bookingList.html', {'movie': movies})
+
+def cancelBooking(request, movie_id):
+    Booking.objects.filter(id=int(movie_id)).delete()
+    message = 'Booking is successfully cancelled.'
+    error = 1
+    messages.success(request, message) 
+
+    return redirect(customerHome)

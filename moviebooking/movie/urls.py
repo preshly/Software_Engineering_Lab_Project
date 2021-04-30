@@ -14,6 +14,8 @@ urlpatterns = [
     path('bookingMovie/', views.bookingMovie, name='movieBookings'),
     path('comments/<int:movie_id>',views.comment, name='comments'),
     path('movieComments/', views.movieComments, name='movieComments'),
+    path('bookingList/', views.bookingList, name='listbooking'),
+    path('cancelBooking/<int:movie_id>', views.cancelBooking, name='cancelBooking'),
 ] 
 admin.site.site_header = 'Movie Booking'
 admin.site.site_title = 'Movie Booking'
