@@ -1,9 +1,13 @@
 from django.shortcuts import render, redirect
 from django.http import HttpResponse
+from django.http.response import Http404,JsonResponse
 from .forms import CustomerSignupForm
 from .models import Customer,Movie, Show, Booking,Reviews
 from .displayErrors import returnError
 from django.contrib import messages
+from django.db.models import Q
+from django.views.generic import ListView
+
 
 # Create your views here.
 
@@ -12,7 +16,32 @@ def index(request):
    #request.session['username'] = None
    return render(request,'homepg_html/home_page.html', {'movie': movies})
 
-        
+def search_content(request):
+    search_movie = request.GET.get('search')
+    #dipsplays movie list,based on your search like movie name,language,date
+    
+    if search_movie:
+         movie = Movie.objects.filter(Q(movie_name__icontains=search_movie) | Q(movie_language__icontains=search_movie)
+        |Q(movie_description__icontains=search_movie)|Q(movie_release_date__icontains=search_movie))
+    else:
+        search_ = request.GET.get('search')
+        movie = Movie.objects.all().order_by("name")
+    return render(request, 'homepg_html/home_page2.html', {'movie': movie})
+
+
+def autocomplete(request):
+    #This search is doneu sing ajax 
+    #gets the term typed in search box
+    if 'term' in request.GET:
+        movie=Movie.objects.filter(name__istartswith=request.GET.get('term'))
+        names=[],
+        for re in movie:
+            names.append(re.movie_name)
+            #sends data in form of json
+        return JsonResponse(names,safe=False)
+    return render(request, 'homepg_html/home_page2.html')
+
+
 
 def customerSignup(request):
     if request.method == 'POST':

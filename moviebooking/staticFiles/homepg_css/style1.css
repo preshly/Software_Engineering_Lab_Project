@@ -126,7 +126,7 @@ form.example::after {
 body{margin:0px;}
 
 .trending-container{
-height:500px;
+overflow:auto;
 width:100%;
 background-color:black;
 }
