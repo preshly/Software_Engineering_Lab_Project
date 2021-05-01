@@ -122,20 +122,6 @@ form {
   transition: 0.3s;
 }
 
-.input2 {
-  width: 100%;
-  outline: none;
-  border: 2px solid #462929;
-  background: none;
-  padding: 0.6rem 1.2rem;
-  color: rgb(131, 50, 50);
-  font-weight: 500;
-  font-size: 0.95rem;
-  letter-spacing: 0.5px;
-  border-radius: 25px;
-  transition: 0.3s;
-}
-
 textarea.input {
   padding: 0.8rem 1.2rem;
   min-height: 150px;

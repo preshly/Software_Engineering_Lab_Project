@@ -1,0 +1,94 @@
+<html>
+<head>
+<style>
+    .outer{
+        padding-top: 4%;
+        list-style-type: none;
+        text-align: center;
+        margin: 0;
+        padding: 0;
+    }
+    .box{
+        display: inline-block;
+        padding: 5%;
+        background-color: blue;
+        width:20%;
+        .container {
+  width: 100%;
+  background-color: #ddd;
+}
+
+.skills {
+  text-align: right;
+  padding-top: 10px;
+  padding-bottom: 10px;
+  color: white;
+}
+
+    }
+    </style>
+    
+    <script src="https://code.jquery.com/jquery-3.4.1.min.js"></script>
+  <script src="https://cdn.jsdelivr.net/npm/chart.js@2.9.3/dist/Chart.min.js"></script>
+</head>
+<body >
+<div class="outer">
+<div class="box">
+<h2>Booking today: </h2>
+{{1}}</div>
+<div class="box">
+<h2>Booking this week: </h2>
+{{3}}
+</div>
+<div class="box">
+<h2>booking this month: </h2>
+{{5}}
+</div>
+</br></br></br>
+
+ <div id="container" style="width: 75%;">
+    <canvas id="pie-chart"></canvas>
+  </div></br></br>
+<div style=" margin-left: 280px;">
+  <script src="https://cdn.jsdelivr.net/npm/chart.js@2.9.3/dist/Chart.min.js"></script>
+  <script>
+
+    var config = {
+      type: 'pie',
+      data: {
+        datasets: [{
+          data: {{ data|safe }},
+          backgroundColor: [
+            '#696969', '#808080', '#A9A9A9', '#C0C0C0', '#D3D3D3'
+          ],
+          label: 'movie'
+        }],
+        labels: {{ labels|safe }}
+      },
+      options: {
+        responsive: true
+      }
+    };
+
+    window.onload = function() {
+      var ctx = document.getElementById('pie-chart').getContext('2d');
+      window.myPie = new Chart(ctx, config);
+    };
+
+  </script>
+
+
+   
+  </div>
+
+
+
+
+
+
+
+
+
+</body>
+
+</html>

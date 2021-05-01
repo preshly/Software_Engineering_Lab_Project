@@ -29,7 +29,7 @@ class Customer(models.Model):
     password = models.CharField(max_length=8, validators=[MinLengthValidator(8)])
     is_active = models.BooleanField(default = False)  
     def __str__(self):
-        return self.username
+        return self.username,self.email
 
 class Show(models.Model):
     show_id = models.AutoField
