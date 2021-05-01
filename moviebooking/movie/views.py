@@ -214,11 +214,14 @@ def comment (request, movie_id):
     if request.session['username'] != None:
         try:
             movie = Movie.objects.get(pk= movie_id)
-            #print(movie)
-            request.session['movie'] = movie.pk
-            args = {'movie':movie}
-            #print(args)
-            # return render(request, 'comments/comment.html', args )
+            try:
+                comments = Reviews.objects.filter(disp_movie = movie)
+                #print(comments)
+                request.session['movie'] = movie.pk
+                args = {'movie':movie, 'comments':comments}
+            except Exception as e:
+                pass
+            
             
         except Exception as e:
             message = 'Some error occurred. Please try again later.' 
@@ -266,3 +269,5 @@ def cancelBooking(request, movie_id):
     messages.success(request, message) 
 
     return redirect(customerHome)
+
+

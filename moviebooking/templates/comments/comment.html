@@ -4,7 +4,7 @@
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>BookMyMovie | Bookings</title>
+  <title>BookMyMovie | Comment</title>
   <link rel="stylesheet" href="/static/customer_css/style_for_forms.css" />
   <!-- <link rel="stylesheet" href="style.css" /> -->
   <script src="https://kit.fontawesome.com/64d58efce2.js" crossorigin="anonymous"></script>
@@ -17,8 +17,10 @@
     <div class="form">
       <div class="contact-info">
        <h3 class="title"><a href="/customer_home/" id='linkToHomePage'> BookMyMovie </a></h3> 
-        
-        <br><br><br>
+       <p class="text">
+        Comment Section 
+      </p>
+        <br>
         <div class="contact-form">
           <span class="circle one"></span>
           <span class="circle two"></span>
@@ -34,24 +36,41 @@
 
               <div class="input-container">
                 <p>Enter your comment below</p>
-                <textarea rows="4" cols="50" name="comment" placeholder="Enter your comment here..." >
+                <textarea rows="4" cols="50" name="comment" placeholder="Enter your comment here..." style="border-radius: 14px;">
                 </textarea>
                                              
               </div>
 
               <input type="submit" value="Add Comment" class="btn" />
+              
               <br><br>
   
              
 
           </form>
         </div>
-
+           
       </div>
 
 
       <img style="padding-top:28%;padding-bottom:15%;padding-right:5%;padding-left:0%"
         src="/media/{{ movie.image }}" width="500" height="600">
+          <h2 style="margin-left:140px;">All Comments</h2>
+          <br>
+        <div style="margin-left:140px;">
+
+          {% for comments in comments %}
+
+          
+          <div style="padding: 6px;" >
+            <p style="margin-left:40px;" class="input2">{{comments.feedback_data}} </p>
+
+            <p style="margin-left:80px;">By {{comments.users.username}} </p>
+            
+          </div>
+          
+          {% endfor %}
+        </div>
     </div>
 
 </body>
