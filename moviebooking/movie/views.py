@@ -1,13 +1,12 @@
-import datetime
 from django.shortcuts import render, redirect
-from django.http.response import Http404,JsonResponse
 from django.http import HttpResponse
+from django.http.response import Http404,JsonResponse
 from .forms import CustomerSignupForm
 from .models import Customer,Movie, Show, Booking,Reviews
 from .displayErrors import returnError
 from django.contrib import messages
-from django.views.generic import ListView
 from django.db.models import Q
+from django.views.generic import ListView
 from django.utils import timezone
 from django.db.models import Sum
 from datetime import timedelta
@@ -21,26 +20,31 @@ def index(request):
    return render(request,'homepg_html/home_page.html', {'movie': movies})
 
 def search_content(request):
+    search_movie = request.GET.get('search')
+    #dipsplays movie list,based on your search like movie name,language,date
     
-    search_resume = request.GET.get('search')
-
-    if search_resume:
-         resume = Movie.objects.filter(Q(name__icontains=search_resume) | Q(gender__icontains=search_resume))
+    if search_movie:
+         movie = Movie.objects.filter(Q(movie_name__icontains=search_movie) | Q(movie_language__icontains=search_movie)
+        |Q(movie_description__icontains=search_movie)|Q(movie_release_date__icontains=search_movie))
     else:
         search_ = request.GET.get('search')
-        resume = Movie.objects.all().order_by("name")
-    return render(request, 'homepg_html/home_page2.html', {'resume': resume})
+        movie = Movie.objects.all().order_by("name")
+    return render(request, 'homepg_html/home_page2.html', {'movie': movie})
+
 
 def autocomplete(request):
+    #This search is doneu sing ajax 
+    #gets the term typed in search box
     if 'term' in request.GET:
-        resume=Movie.objects.filter(name__istartswith=request.GET.get('term'))
-        names=[]
-        for re in resume:
-            names.append(re.name)
+        movie=Movie.objects.filter(name__istartswith=request.GET.get('term'))
+        names=[],
+        for re in movie:
+            names.append(re.movie_name)
+            #sends data in form of json
         return JsonResponse(names,safe=False)
     return render(request, 'homepg_html/home_page2.html')
 
-        
+
 
 def customerSignup(request):
     if request.method == 'POST':
@@ -213,11 +217,14 @@ def comment (request, movie_id):
     if request.session['username'] != None:
         try:
             movie = Movie.objects.get(pk= movie_id)
-            #print(movie)
-            request.session['movie'] = movie.pk
-            args = {'movie':movie}
-            #print(args)
-            # return render(request, 'comments/comment.html', args )
+            try:
+                comments = Reviews.objects.filter(disp_movie = movie)
+                #print(comments)
+                request.session['movie'] = movie.pk
+                args = {'movie':movie, 'comments':comments}
+            except Exception as e:
+                pass
+            
             
         except Exception as e:
             message = 'Some error occurred. Please try again later.' 
@@ -252,7 +259,22 @@ def movieComments(request):
                 return redirect(customerHome)
     except Exception as e:
         return redirect(index)
-    
+
+def bookingList(request):
+    if request.session['username'] != None:
+        movies = Booking.objects.filter(user=request.session['username'])
+        return render(request, 'bookings/bookingList.html', {'movie': movies})
+
+def cancelBooking(request, movie_id):
+    Booking.objects.filter(id=int(movie_id)).delete()
+    message = 'Booking is successfully cancelled.'
+    error = 1
+    messages.success(request, message) 
+
+    return redirect(customerHome)
+
+
+
 def pie_chart(request):
     
     labels = ['English','Hindi','Tamil']
@@ -281,9 +303,6 @@ def pie_chart(request):
         
     })
 
-
-
-    
 def population_chart(request):
     labels = []
     data = []

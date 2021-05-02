@@ -1,0 +1,60 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>BookMyMovie | Cancel Bookings</title>
+  <link rel="stylesheet" href="/static/customer_css/style_for_bookings.css" />
+  <!-- <link rel="stylesheet" href="style.css" /> -->
+  <script src="https://kit.fontawesome.com/64d58efce2.js" crossorigin="anonymous"></script>
+</head>
+
+<body>
+
+  {% for movie in movie %}
+    <div class="container" style="display: block;">
+      <div class="form">
+        <div class="contact-info">
+          <h3 class="title"><a href="/customer_home/" id='linkToHomePage'> BookMyMovie | Cancel Booking </a></h3>
+          <p class="text">
+            Cancel your bookings with ease.
+          </p>
+
+          <div class="contact-form">
+            <span class="circle one"></span>
+            <span class="circle two"></span>
+
+            <form method="POST">{% csrf_token %}
+
+              <div class="input-container">
+                <input type="text" id="movie_name" name="movie_name" class="input" value="{{movie.show}}" disabled/>                           
+              </div>
+                <div class="input-container">
+                  <input type="text" id="show" name="show" class="input" value="{{movie.show.show_date}} | Time: {{movie.show.show_time}} | Price: {{movie.show.show_price}}" disabled/>
+                  <!-- <select name="shows" id="shows" class="input">
+                      <option  value="{{movie.show}}"> 
+                        {{movie.show.show_date}} | Time: {{movie.show.show_time}} | Price: {{movie.show.show_price}}
+                      </option>   
+                  </select> -->
+                </div>               
+
+                <div class="input-container">
+                  <input type="text" id="num_of_tickets" name="num_of_tickets" class="input" value="{{movie.number_of_tickets}}" disabled />                           
+                </div>
+                <button type="submit" value="Cancel Tickets" class="btn"><a class="cancel" href="{% url 'cancelBooking' movie_id=movie.pk %}">Cancel Ticket</a></button>
+                <br><br>
+            </form>
+          </div>
+
+        </div>
+
+
+        <img style="padding-top:28%;padding-bottom:15%;padding-right:5%;padding-left:0%"
+          src="/media/{{ movie.show.show_movie.image }}" width="500" height="600">
+      </div>
+    {% endfor %}
+
+</body>
+
+</html>
